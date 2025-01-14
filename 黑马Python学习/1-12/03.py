@@ -1,6 +1,6 @@
-'''
+"""
 字典学习
-'''
+"""
 person = {"name": "Alice", "age": 25, "city": "New York"}
 print(person.keys())
 print(person.values())

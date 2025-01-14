@@ -12,12 +12,26 @@ users = [{
     'status': True
 }]
 print(users)
+flag = False
 # 输入并去除前后空白
-user = input('请输入用户名：').strip()
-pwd = input('请输入密码：').strip()
-for i in users:
-    if user == i['name'] and pwd == i['pwd'] and i['status']:
-        print('登录成功')
-        break
+for i in range(3):
+    user = input('请输入用户名：').strip()
+    pwd = input('请输入密码：').strip()
+    for j in users:
+        if user == j['name']:
+            if pwd == j['pwd']:
+                if j['status']:
+                    print('登录成功')
+                    flag = True
+                    break
+                else:
+                    print('账号被冻结')
+            else:
+                print('密码错误')
+            break
     else:
-        print('登录失败')
+        print('用户名称不存在')
+    if flag:
+        break
+else:
+    print('三次密码均输入错误')
